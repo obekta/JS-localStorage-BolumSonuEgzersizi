@@ -12,7 +12,7 @@ increaseDOM.addEventListener("click", clickFunc)
 decreaseDOM.addEventListener("click", clickFunc)
 
 function clickFunc() {
-    this.id = "increase" ? counter += 1 : this.id = "decrease" ? counter -= 1 : 
+    this.id == "increase" ? counter += 1 : counter -= 1    
     localStorage.setItem("counter", counter)
     counterDOM.innerHTML = counter
 }
