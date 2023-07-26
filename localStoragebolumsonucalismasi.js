@@ -8,13 +8,23 @@ let decreaseDOM = document.querySelector("#decrease")
 counterDOM.innerHTML = counter
 // bu kısım yazılmazsa, counter html'de verilen ilk değerinden başlar 
 
-increaseDOM.addEventListener("click", clickFunc)
-decreaseDOM.addEventListener("click", clickFunc)
+increaseDOM.addEventListener("click", clickFuncInc)
 
-function clickFunc() {
+
+function clickFuncInc() {
     console.log(this)
-    this.id == "increase" ? counter += 1 : counter -= 1    
+    counter += 1    
     localStorage.setItem("counter", counter)
     counterDOM.innerHTML = counter
 }
+
+decreaseDOM.addEventListener("click", clickFuncDec)
+
+function clickFuncDec() {
+    console.log(this)
+    counter -= 1 
+    localStorage.setItem("counter", counter)
+    counterDOM.innerHTML = counter
+}
+
 
